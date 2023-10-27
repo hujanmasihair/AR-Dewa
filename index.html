@@ -23,7 +23,7 @@
                     id="animated-asset"
                     src="assets/dewa.gltf"
                 ></a-asset-item>
-                <audio id="sound" src="assets/audiodewa.mp3" preload="auto"></audio>
+                <audio id="sound" src="assets/welomedewa.mp3" preload="auto"></audio>
             </a-assets>
 
             <a-marker
@@ -35,11 +35,11 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
-                soundhandler
+                
             >
                 <a-entity
                     id="bowser-model"
-                    scale="1 1 1"
+                    scale="0.5 0.5 0.5"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
@@ -51,14 +51,14 @@
             <a-entity camera></a-entity>
 
             <a-entity id="audiodewa" geometry="primitive: plane" material="color: blue"
-          position="-10 0 0" sound="src: url(assets/audiodewa.mp3); autoplay: true"></a-entity>
+          position="-10 0 0" sound="src: url(assets/welomedewa.mp3); autoplay: true" soundhandler></a-entity>
 
             <!-- <audio id="myAudio" controls>
                 <source src="assets/audiodewa.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio> -->
 
-            <a-sound src="assets/audio.mp3" autoplay="true" position="0 1 0"></a-sound>
+            <a-sound src="assets/welomedewa.mp3" autoplay="true" position="0 1 0"></a-sound>
         <p>sedang memuat...</p>
         </a-scene>
 
@@ -69,7 +69,7 @@
                      if (document.querySelector('a-marker').object3D.visible == true) {
                          entity.components.sound.playSound();
                      } else {
-                         entity.components.sound.pauseSound();
+                         //entity.components.sound.pauseSound();
                      }
                 }
             });
